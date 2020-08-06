@@ -1,6 +1,14 @@
 # test-python-sqlite
 A repository to test python sqlite library.
 
+### Python env
+
+Execute the application
+
+```bash
+python main.py
+```
+
 ## Usage
 
 The application offers:
