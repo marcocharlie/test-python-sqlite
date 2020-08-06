@@ -124,7 +124,7 @@ def get_total_days_concentration_by_year(database, table):
     return df
 
 
-def get_year_max_concentration_by_year(database, table, from_date):
+def get_year_with_max_concentration(database, table, from_date):
     """
     2. Year with max value of "Number of days with maximum 8-hour average ozone concentration over the 
     National Ambient Air Quality Standard" from year 2008 and later(inclusive)
@@ -141,7 +141,8 @@ def get_year_max_concentration_by_year(database, table, from_date):
             FROM measures
             WHERE (measurename = "Number of days with maximum 8-hour average ozone concentration over the National Ambient Air Quality Standard") AND (reportyear >= %s)
             GROUP BY reportyear
-            ORDER BY reportyear ASC;
+            ORDER BY max_year_value DESC
+            LIMIT 1;
             ''' %from_date
     
     cursor.execute(query)
