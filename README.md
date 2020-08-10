@@ -1,7 +1,18 @@
 # test-python-sqlite
 A repository to test the Python SQLite module.
 
+## Requirements
+
+You can run the application in a Python 3.7 environment.
+
 ### Python env
+
+Install requirements via PIP
+
+```bash
+virtualenv .venv
+pip install -r requirements.txt
+```
 
 Execute the application
 
